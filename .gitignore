@@ -4,3 +4,13 @@ dist/
 .env
 .env.local
 .vscode/
+public/
+*.mp4
+*.mov
+# Local images / media assets
+public/imags/
+*.mp4
+*.mov
+*.avi
+*.webp
+
