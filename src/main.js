@@ -1,5 +1,72 @@
 import './style.css';
 
+const navLinks = Array.from(document.querySelectorAll('[data-nav-link]'));
+
+const sectionIds = navLinks
+  .map((link) => link.getAttribute('href'))
+  .filter((href) => href && href.startsWith('#'))
+  .map((href) => href.replace('#', ''));
+
+const sections = sectionIds
+  .map((id) => document.getElementById(id))
+  .filter(Boolean);
+
+function setActiveNav(id) {
+  navLinks.forEach((link) => {
+    const isActive = link.getAttribute('href') === `#${id}`;
+
+    link.classList.toggle('border-ceremony-gold', isActive);
+    link.classList.toggle('text-ceremony-deepgold', isActive);
+    link.classList.toggle('bg-[#F9F6EF]', isActive);
+
+    link.classList.toggle('border-transparent', !isActive);
+    link.classList.toggle('text-black/65', !isActive);
+    link.classList.toggle('bg-transparent', !isActive);
+
+    if (isActive) {
+      link.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest',
+      });
+    }
+  });
+}
+
+function updateActiveNavByScroll() {
+  const headerOffset = window.innerWidth >= 1024 ? 90 : 120;
+  const currentY = window.scrollY + headerOffset;
+
+  let currentSectionId = sections[0]?.id;
+
+  sections.forEach((section) => {
+    if (currentY >= section.offsetTop) {
+      currentSectionId = section.id;
+    }
+  });
+
+  if (currentSectionId) {
+    setActiveNav(currentSectionId);
+  }
+}
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    const id = link.getAttribute('href')?.replace('#', '');
+
+    if (id) {
+      setActiveNav(id);
+    }
+  });
+});
+
+window.addEventListener('scroll', updateActiveNavByScroll);
+window.addEventListener('resize', updateActiveNavByScroll);
+window.addEventListener('load', updateActiveNavByScroll);
+
+updateActiveNavByScroll();
+
+
 const contestants = Array.from({ length: 57 }, (_, index) => {
       const number = index + 1;
       const group = number <= 19 ? 1 : number <= 38 ? 2 : 3;

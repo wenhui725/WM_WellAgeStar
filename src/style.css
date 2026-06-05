@@ -147,6 +147,7 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
     @keyframes sweep {
       0%, 48% { left: -38%; }
       70%, 100% { left: 124%; }
