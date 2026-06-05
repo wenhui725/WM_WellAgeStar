@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="zh-Hant">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,31 +8,70 @@
   <meta name="description" content="第18屆激密之星初選活動頁，聚焦57位參賽者、12位入圍者與現場票選人氣王。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap"
+    rel="stylesheet">
   <script type="module" src="/src/main.js"></script>
 </head>
+
 <body class="font-body antialiased">
-  <header class="fixed inset-x-0 top-0 z-50 border-b border-ceremony-gold/25 bg-ink/95 text-white backdrop-blur-xl">
-    <div class="wrap flex h-18 items-center justify-between gap-4">
-      <a href="#top" class="group flex items-center gap-3" aria-label="回到頁首">
-        <span class="grid h-11 w-11 place-items-center rounded-full border border-ceremony-gold/70 bg-ceremony-pink font-display text-lg font-black shadow-glow">18</span>
-        <span class="leading-tight">
-          <span class="block text-[11px] font-black tracking-[.32em] text-ceremony-gold">WELL AGE STAR</span>
-          <span class="hidden text-sm font-bold tracking-[.16em] text-white/85 sm:block">激密之星初選</span>
-        </span>
-      </a>
-      <nav class="hidden items-center gap-7 text-sm font-bold tracking-[.18em] text-white/70 lg:flex" aria-label="主要導覽">
-        <a class="transition hover:text-ceremony-rose" href="#contestants">參賽者</a>
-        <a class="transition hover:text-ceremony-rose" href="#popular">人氣王</a>
-        <a class="transition hover:text-ceremony-rose" href="#finalists">入圍者</a>
-        <a class="transition hover:text-ceremony-rose" href="#schedule">流程</a>
+  <header id="siteHeader"
+    class="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-white text-black transition-all duration-500">
+    <div
+      class="mx-auto flex max-w-[1680px] flex-col bg-white lg:h-[64px] lg:flex-row lg:items-center lg:justify-between lg:px-10">
+      <!-- Logo row -->
+      <div class="flex h-[56px] items-center px-5 sm:px-8 lg:h-auto lg:px-0">
+        <a href="#hero" class="flex items-center" aria-label="回到頁首">
+          <img class="h-8 w-auto object-contain lg:h-9" src="/imags/logo/logo-light.webp"
+            alt="Well Market International Logo">
+        </a>
+      </div>
+
+      <!-- Nav row -->
+      <nav id="siteNav"
+        class="flex items-center gap-3 overflow-x-auto border-t border-black/5 px-5 py-3 text-[14px] font-medium tracking-[0.08em] text-black/65 scrollbar-hide sm:px-8 lg:border-t-0 lg:px-0 lg:py-0"
+        aria-label="主要導覽">
+        <a data-nav-link
+          class="shrink-0 whitespace-nowrap border border-transparent px-3 py-2 text-black/65 transition hover:border-ceremony-gold hover:text-ceremony-deepgold"
+          href="#hero">
+          活動主題
+        </a>
+
+        <a data-nav-link
+          class="shrink-0 whitespace-nowrap border border-transparent px-3 py-2 text-black/65 transition hover:border-ceremony-gold hover:text-ceremony-deepgold"
+          href="#contestants">
+          參賽者
+        </a>
+
+        <a data-nav-link
+          class="shrink-0 whitespace-nowrap border border-transparent px-3 py-2 text-black/65 transition hover:border-ceremony-gold hover:text-ceremony-deepgold"
+          href="#popular">
+          人氣王
+        </a>
+
+        <a data-nav-link
+          class="shrink-0 whitespace-nowrap border border-transparent px-3 py-2 text-black/65 transition hover:border-ceremony-gold hover:text-ceremony-deepgold"
+          href="#finalists">
+          入圍名單
+        </a>
+
+        <a data-nav-link
+          class="shrink-0 whitespace-nowrap border border-transparent px-3 py-2 text-black/65 transition hover:border-ceremony-gold hover:text-ceremony-deepgold"
+          href="#offers">
+          優惠資訊
+        </a>
+
+        <a data-nav-link
+          class="shrink-0 whitespace-nowrap border border-transparent px-3 py-2 text-black/65 transition hover:border-ceremony-gold hover:text-ceremony-deepgold"
+          href="#schedule">
+          活動流程
+        </a>
       </nav>
-      <a href="#contestants" class="min-h-11 rounded-full border border-ceremony-gold/60 px-4 py-2 text-sm font-black tracking-[.14em] text-ceremony-gold transition hover:border-ceremony-pink hover:bg-ceremony-pink hover:text-white">查看名單</a>
     </div>
   </header>
 
-  <main id="top">
-    <section class="stage-surface hero-lights relative isolate overflow-hidden pt-[72px]">
+  <main>
+    <section id="hero" class="stage-surface hero-lights relative isolate overflow-hidden pt-[72px]">
       <div class="absolute inset-x-0 top-18 h-px gold-rule"></div>
       <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-veil to-transparent"></div>
       <div class="wrap relative z-10 grid min-h-205 items-center gap-10 py-16 lg:grid-cols-[1.08fr_.92fr] lg:py-24">
@@ -41,7 +81,8 @@
             第18屆<br><span class="text-ceremony-rose">激密之星</span><br>初選
           </h1>
           <div class="mx-auto my-8 h-px max-w-2xl gold-rule lg:mx-0"></div>
-          <p class="text-base font-black tracking-[.28em] text-ceremony-gold sm:text-xl">WELL AGE STAR Preliminary Round</p>
+          <p class="text-base font-black tracking-[.28em] text-ceremony-gold sm:text-xl">WELL AGE STAR Preliminary Round
+          </p>
           <p class="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/72 lg:mx-0 lg:text-lg">
             以會員與參賽者為主角的年度初選舞台。頁面延續表揚大會的黑金典禮感，聚焦57位參賽者、12位入圍者與現場票選人氣王揭曉。
           </p>
@@ -101,12 +142,22 @@
           <div class="light-card rounded-3xl p-4">
             <label class="block text-sm font-bold text-plum/60" for="contestantSearch">搜尋參賽者</label>
             <div class="mt-3 grid gap-3 md:grid-cols-[1fr_auto]">
-              <input id="contestantSearch" class="min-h-12 rounded-2xl border border-ceremony-deepgold/20 bg-white px-4 text-base text-plum outline-none transition placeholder:text-plum/35 focus:border-ceremony-pink" type="search" placeholder="輸入姓名、編號或梯次">
+              <input id="contestantSearch"
+                class="min-h-12 rounded-2xl border border-ceremony-deepgold/20 bg-white px-4 text-base text-plum outline-none transition placeholder:text-plum/35 focus:border-ceremony-pink"
+                type="search" placeholder="輸入姓名、編號或梯次">
               <div class="grid grid-cols-2 gap-2 sm:grid-cols-4" aria-label="梯次篩選">
-                <button class="filter-button min-h-12 rounded-2xl border border-ceremony-deepgold/20 px-4 text-sm font-black text-plum/70" type="button" data-group="all" aria-pressed="true">全部</button>
-                <button class="filter-button min-h-12 rounded-2xl border border-ceremony-deepgold/20 px-4 text-sm font-black text-plum/70" type="button" data-group="1" aria-pressed="false">1-19</button>
-                <button class="filter-button min-h-12 rounded-2xl border border-ceremony-deepgold/20 px-4 text-sm font-black text-plum/70" type="button" data-group="2" aria-pressed="false">20-38</button>
-                <button class="filter-button min-h-12 rounded-2xl border border-ceremony-deepgold/20 px-4 text-sm font-black text-plum/70" type="button" data-group="3" aria-pressed="false">39-57</button>
+                <button
+                  class="filter-button min-h-12 rounded-2xl border border-ceremony-deepgold/20 px-4 text-sm font-black text-plum/70"
+                  type="button" data-group="all" aria-pressed="true">全部</button>
+                <button
+                  class="filter-button min-h-12 rounded-2xl border border-ceremony-deepgold/20 px-4 text-sm font-black text-plum/70"
+                  type="button" data-group="1" aria-pressed="false">1-19</button>
+                <button
+                  class="filter-button min-h-12 rounded-2xl border border-ceremony-deepgold/20 px-4 text-sm font-black text-plum/70"
+                  type="button" data-group="2" aria-pressed="false">20-38</button>
+                <button
+                  class="filter-button min-h-12 rounded-2xl border border-ceremony-deepgold/20 px-4 text-sm font-black text-plum/70"
+                  type="button" data-group="3" aria-pressed="false">39-57</button>
               </div>
             </div>
             <p id="contestantCount" class="mt-3 text-sm text-plum/50">顯示 57 位參賽者</p>
@@ -220,4 +271,5 @@
   </footer>
 
 </body>
+
 </html>
