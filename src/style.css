@@ -136,8 +136,17 @@
       width: 30%;
       transform: rotate(15deg);
       background: linear-gradient(90deg, transparent, rgba(255,255,255,.24), transparent);
-      animation: sweep 8s ease-in-out infinite;
+      animation: sweep 9s ease-in-out infinite;
     }
+
+    .hero-visual-shine.shine::before {
+  z-index: 20;
+  pointer-events: none;
+}
+
+.hero-visual-shine img {
+  display: block;
+}
 
     .scrollbar-hide {
   -ms-overflow-style: none;
@@ -149,8 +158,8 @@
 }
 
     @keyframes sweep {
-      0%, 48% { left: -38%; }
-      70%, 100% { left: 124%; }
+      0%, 45% { left: -50%; }
+      75%, 100% { left: 130%; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }

@@ -77,48 +77,61 @@
 
   <main>
     <!-- hero區塊 -->
-    <section id="hero" class="stage-surface hero-lights relative isolate overflow-hidden pt-[72px]">
-      <div class="absolute inset-x-0 top-18 h-px gold-rule"></div>
-      <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-veil to-transparent"></div>
-      <div class="wrap relative z-10 grid min-h-205 items-center gap-10 py-16 lg:grid-cols-[1.08fr_.92fr] lg:py-24">
-        <div class="mx-auto max-w-4xl text-center lg:mx-0 lg:text-left">
-          <p class="ornament lg:justify-start lg:[&:after]:hidden">Preliminary Round</p>
-          <h1 class="mt-8 font-display text-[clamp(3.8rem,11vw,9.5rem)] font-black leading-[.88] text-white">
-            第18屆<br><span class="text-ceremony-rose">激密之星</span><br>初選
+    <section id="hero" class="relative isolate overflow-hidden bg-ink pt-[112px] lg:pt-20">
+      <div class="absolute inset-x-0 top-[112px] h-px bg-ceremony-gold/20 lg:top-20"></div>
+      <!-- 背景光暈 -->
+      <div
+        class="pointer-events-none absolute left-[-20%] top-1/5 h-125 w-125 rounded-full bg-ceremony-pink/20 blur-[200px]">
+      </div>
+      <div
+        class="pointer-events-none absolute right-[-10%] bottom-0 h-[480px] w-[480px] rounded-full bg-ceremony-gold/15 blur-[130px]">
+      </div>
+
+      <div
+        class="mx-auto grid min-h-[calc(100vh-112px)] max-w-420 items-center gap-12 px-6 py-16 sm:px-10 lg:min-h-[calc(100vh-80px)] lg:grid-cols-[1fr_0.9fr] lg:px-12 lg:py-20">
+        <!-- Left content -->
+        <div class="relative z-10 max-w-3xl">
+          <p class="text-[13px] font-medium tracking-[0.14em] text-white/70 uppercase">
+            01 / 第18屆激密之星初選
+          </p>
+          <h1
+            class="mt-8 font-display text-[clamp(4rem,8.5vw,9rem)] font-semibold leading-[0.95] tracking-[-0.08em] text-white">
+            激密之星，<br>
+            <span class="text-ceremony-gold">閃耀初選。</span>
           </h1>
-          <div class="mx-auto my-8 h-px max-w-2xl gold-rule lg:mx-0"></div>
-          <p class="text-base font-black tracking-[.28em] text-ceremony-gold sm:text-xl">WELL AGE STAR Preliminary Round
+          <p class="mt-7 max-w-2xl text-lg font-normal leading-loose text-white/60 md:text-xl">
+            以參賽者為舞台主角，凝聚57位激密之星的自信能量，<br>
+            記錄初選登場、人氣票選與12位入圍者揭曉的榮耀時刻。
           </p>
-          <p class="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/72 lg:mx-0 lg:text-lg">
-            以會員與參賽者為主角的年度初選舞台。頁面延續表揚大會的黑金典禮感，聚焦57位參賽者、12位入圍者與現場票選人氣王揭曉。
-          </p>
+
+       <div class="mt-10 flex flex-wrap gap-4">
+  <a
+    href="#contestants"
+    class="inline-flex min-h-14 items-center justify-center bg-ceremony-pink px-8 text-base font-bold tracking-[0.08em] text-white transition hover:bg-[#9F0038]"
+  >
+    查看參賽者
+  </a>
+
+  <a
+    href="#gallery"
+    class="inline-flex min-h-14 items-center justify-center border border-ceremony-pink px-8 text-base font-bold tracking-[0.08em] text-ceremony-pink transition hover:bg-ceremony-pink hover:text-white"
+  >
+    活動紀錄
+  </a>
+</div>
         </div>
-        <aside class="glass shine rounded-[2rem] p-5 sm:p-7" aria-label="活動資訊">
-          <div class="rounded-[1.45rem] border border-white/10 bg-black/42 p-6 text-center">
-            <p class="text-sm font-black tracking-[.28em] text-ceremony-rose">EVENT INFORMATION</p>
-            <p class="mt-5 font-display text-5xl font-black text-white sm:text-6xl">2025.12.20</p>
-            <p class="mt-2 text-lg font-bold text-ceremony-gold">星期六</p>
-          </div>
-          <dl class="mt-5 grid gap-3">
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <dt class="text-sm text-white/48">時間</dt>
-              <dd class="mt-1 text-base font-bold leading-7 text-white">12:30 開放進場｜13:30 準時開始</dd>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <dt class="text-sm text-white/48">地點</dt>
-              <dd class="mt-1 text-base font-bold leading-7 text-white">潮港城國際美食館 3 樓 帝國 A 廳</dd>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <dt class="text-sm text-white/48">地址</dt>
-              <dd class="mt-1 text-base font-bold leading-7 text-white">台中市南屯區環中路四段 2 號</dd>
-            </div>
-          </dl>
-        </aside>
+
+        <!-- Right visual -->
+        <div class="relative z-10 flex justify-center lg:justify-end">
+          <figure
+            class="hero-visual-shine shine relative w-full max-w-[440px] overflow-hidden rounded-[1.5rem] border border-ceremony-gold/25 bg-black shadow-[0_30px_90px_rgba(0,0,0,0.45)] lg:max-w-[500px]">
+            <img src="/imags/主視覺.webp" alt="第18屆激密之星初選主視覺" class="relative z-10 block w-full object-contain">
+          </figure>
+        </div>
       </div>
     </section>
 
-
-  <!-- 02參賽者 -->
+    <!-- 02參賽者 -->
     <section id="contestants" class="bg-veil py-16 md:py-24">
       <div class="wrap">
         <div class="grid gap-8 lg:grid-cols-[.72fr_1.28fr] lg:items-end">
@@ -307,7 +320,6 @@
       <p class="mt-6 text-xs font-bold tracking-[.24em] text-white/38">WELL AGE STAR PRELIMINARY ROUND</p>
     </div>
   </footer>
-
 </body>
 
 </html>
