@@ -9,8 +9,6 @@ public/
 *.mov
 # Local images / media assets
 public/imags/
-*.mp4
-*.mov
-*.avi
+*.jpg
 *.webp
 
