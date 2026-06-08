@@ -528,12 +528,55 @@ const contestants = [
   }
 ];
 
-const finalists = Array.from({ length: 12 }, (_, index) => ({
-  rank: String(index + 1).padStart(2, '0'),
-  name: `入圍者 ${String(index + 1).padStart(2, '0')}`,
-  number: '待公布',
-  photo: ''
-}));
+const finalistNumbers = ['11', '12', '13', '19', '25', '32', '39', '40', '41', '42', '53', '57'];
+
+const finalistPhotos = {
+  '11': '/imags/入圍者/阮詩翃.webp',
+  '12': '/imags/入圍者/吳哲村.webp',
+  '13': '/imags/入圍者/葉招治.webp',
+  '19': '/imags/入圍者/陳聰碧.webp',
+  '25': '/imags/入圍者/黃孟蓁.webp',
+  '32': '/imags/入圍者/應海珠.webp',
+  '39': '/imags/入圍者/邱聖淵.webp',
+  '40': '/imags/入圍者/林愛呈.webp',
+  '41': '/imags/入圍者/蘇榮華.webp',
+  '42': '/imags/入圍者/陳諭葳.webp',
+  '53': '/imags/入圍者/楊玉華.webp',
+  '57': '/imags/入圍者/王羿淇.webp'
+};
+const finalistFocus = {
+  '11': { x: '8%', y: '0%', zoom: '1.12' },
+  '12': { x: '0%', y: '0%', zoom: '1.04' },
+  '13': { x: '0%', y: '0%', zoom: '1.04' },
+  '19': { x: '0%', y: '2%', zoom: '1.04' },
+
+'25': { x: '0%', y: '12%', zoom: '1.18' },
+  '32': { x: '8%', y: '-7%', zoom: '1.16' },
+  '39': { x: '0%', y: '10%', zoom: '1.14' },
+  '40': { x: '0%', y: '12%', zoom: '1.16' },
+
+  '41': { x: '0%', y: '2%', zoom: '1.02' },
+  '42': { x: '0%', y: '0%', zoom: '1.04' },
+  '53': { x: '0%', y: '0%', zoom: '1.04' },
+  '57': { x: '0%', y: '-9%', zoom: '1.12' }
+};
+const finalists = finalistNumbers
+  .map((number, index) => {
+    const contestant = contestants.find((person) => person.number === number);
+    const focus = finalistFocus[number] || { x: '0%', y: '0%', zoom: '1' };
+
+    if (!contestant) return null;
+
+    return {
+      ...contestant,
+      rank: String(index + 1).padStart(2, '0'),
+      photo: finalistPhotos[number] || contestant.photo,
+      focusX: focus.x,
+      focusY: focus.y,
+      zoom: focus.zoom
+    };
+  })
+  .filter(Boolean);
 
 const schedule = [
   ['12:30-13:15', '開放進場'],
@@ -624,24 +667,39 @@ function renderContestants() {
 
 function renderFinalists() {
   const finalistGrid = document.querySelector('#finalistGrid');
-  finalistGrid.innerHTML = finalists.map((person) => {
-    const photoMarkup = person.photo
-      ? `<img class="absolute inset-0 h-full w-full object-cover" src="${person.photo}" alt="${person.name} 入圍照片">`
-      : '';
+  const finalistNameList = document.querySelector('#finalistNameList');
 
-    return `
-          <article class="dark-card shine overflow-hidden rounded-3xl text-white shadow-glow">
-            <div class="portrait relative aspect-[4/5]">
-              ${photoMarkup}
-              <div class="absolute left-4 top-4 z-10 rounded-full border border-ceremony-gold/45 bg-black/72 px-3 py-1 text-xs font-black tracking-[.18em] text-ceremony-gold">FINAL ${person.rank}</div>
-            </div>
-            <div class="border-t border-ceremony-gold/24 p-5">
-              <p class="font-display text-2xl font-black text-white">${person.name}</p>
-              <p class="mt-2 text-sm font-bold text-ceremony-rose">編號 ${person.number}</p>
-            </div>
-          </article>
-        `;
-  }).join('');
+  if (finalistNameList) {
+    finalistNameList.innerHTML = finalists.map((person) => `
+      <li class="finalist-name-item">
+        <span class="finalist-name-item__number">${person.number} 號</span>
+        <span class="finalist-name-item__name">${person.name}</span>
+      </li>
+    `).join('');
+  }
+
+  finalistGrid.innerHTML = finalists.map((person) => `
+    <article class="finalist-card shine">
+      <div class="finalist-card__photo-wrap">
+<img
+  class="finalist-card__photo"
+  src="${person.photo}"
+  alt="${person.name} 入圍者照片"
+>
+
+        <div class="finalist-card__badge">
+          ${person.number} 號
+        </div>
+
+        <div class="finalist-card__overlay">
+          <p class="font-display text-2xl font-black text-white">${person.name}</p>
+          <p class="mt-1 text-sm font-medium text-ceremony-rose">
+            ${person.team ? `${person.team}・` : ''}${getGroupLabel(person.group)}
+          </p>
+        </div>
+      </div>
+    </article>
+  `).join('');
 }
 
 function renderSchedule() {
