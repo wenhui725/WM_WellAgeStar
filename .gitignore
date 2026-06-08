@@ -4,10 +4,13 @@ dist/
 .env
 .env.local
 .vscode/
-public/
+
+# Local video assets
+public/video/
 *.mp4
 *.mov
-# Local images / media assets
-public/imags/
-*.jpg
 
+# Ignore raw image files, keep optimized webp assets
+*.jpg
+*.jpeg
+*.png
