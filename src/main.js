@@ -11,7 +11,12 @@ const sections = sectionIds
   .map((id) => document.getElementById(id))
   .filter(Boolean);
 
-function setActiveNav(id) {
+function getHeaderHeight() {
+  const header = document.querySelector('#siteHeader');
+  return header ? header.offsetHeight : 0;
+}
+
+function setActiveNav(id, shouldCenterNav = false) {
   navLinks.forEach((link) => {
     const isActive = link.getAttribute('href') === `#${id}`;
 
@@ -23,7 +28,9 @@ function setActiveNav(id) {
     link.classList.toggle('text-black/65', !isActive);
     link.classList.toggle('bg-transparent', !isActive);
 
-    if (isActive) {
+    // 只有點擊 Nav 時，才讓手機橫向 Nav 自動置中
+    // 不要在每次 scroll 時做，否則 Nav 會一直被捲動，造成秀逗感
+    if (isActive && shouldCenterNav && window.innerWidth < 1024) {
       link.scrollIntoView({
         behavior: 'smooth',
         inline: 'center',
@@ -34,8 +41,8 @@ function setActiveNav(id) {
 }
 
 function updateActiveNavByScroll() {
-  const headerOffset = window.innerWidth >= 1024 ? 90 : 120;
-  const currentY = window.scrollY + headerOffset;
+  const headerHeight = getHeaderHeight();
+  const currentY = window.scrollY + headerHeight + 2;
 
   let currentSectionId = sections[0]?.id;
 
@@ -46,17 +53,28 @@ function updateActiveNavByScroll() {
   });
 
   if (currentSectionId) {
-    setActiveNav(currentSectionId);
+    setActiveNav(currentSectionId, false);
   }
 }
 
 navLinks.forEach((link) => {
-  link.addEventListener('click', () => {
-    const id = link.getAttribute('href')?.replace('#', '');
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
 
-    if (id) {
-      setActiveNav(id);
-    }
+    const id = link.getAttribute('href')?.replace('#', '');
+    const target = id ? document.getElementById(id) : null;
+
+    if (!target) return;
+
+    const headerHeight = getHeaderHeight();
+    const targetTop = target.offsetTop - headerHeight;
+
+    setActiveNav(id, true);
+
+    window.scrollTo({
+      top: targetTop,
+      behavior: 'smooth',
+    });
   });
 });
 
@@ -550,7 +568,7 @@ const finalistFocus = {
   '13': { x: '0%', y: '0%', zoom: '1.04' },
   '19': { x: '0%', y: '2%', zoom: '1.04' },
 
-'25': { x: '0%', y: '12%', zoom: '1.18' },
+  '25': { x: '0%', y: '12%', zoom: '1.18' },
   '32': { x: '8%', y: '-7%', zoom: '1.16' },
   '39': { x: '0%', y: '10%', zoom: '1.14' },
   '40': { x: '0%', y: '12%', zoom: '1.16' },
@@ -677,9 +695,9 @@ function contestantCard(person) {
 
   return `
         <article class="overflow-hidden rounded-3xl border border-ceremony-deepgold/20 bg-white shadow-ceremony">
-          <div class="portrait relative aspect-[4/5] overflow-hidden">
+          <div class="portrait relative aspect-4/5 overflow-hidden">
             ${photoMarkup}
-<div class="absolute left-3 top-3 z-10 rounded-full bg-black/80 px-3 py-1 text-xs font-medium text-ceremony-gold ring-1 ring-ceremony-gold/35 sm:left-4 sm:top-4 sm:text-sm">參賽 ${person.number} 號</div>            <div class="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black via-black/62 to-transparent p-4 pt-16">
+<div class="absolute left-3 top-3 z-10 rounded-full bg-black/80 px-3 py-1 text-xs font-medium text-ceremony-gold ring-1 ring-ceremony-gold/35 sm:left-4 sm:top-4 sm:text-sm">參賽 ${person.number} 號</div>            <div class="absolute inset-x-0 bottom-0 z-10 bg-linear-to-t from-black via-black/62 to-transparent p-4 pt-16">
               <p class="font-display text-2xl font-black text-white">${person.name}</p>
 <p class="mt-1 text-sm font-medium text-ceremony-rose">
   ${getGroupLabel(person.group)}${person.team ? `・${person.team}` : ''}
