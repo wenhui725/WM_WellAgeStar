@@ -552,11 +552,20 @@ const schedule = [
 ];
 
 const groupMeta = {
-  1: { title: '第一梯次參賽者', range: '01-19' },
-  2: { title: '第二梯次參賽者', range: '20-38' },
-  3: { title: '第三梯次參賽者', range: '39-57' }
+  1: { title: '第一梯次分享', range: '01-19' },
+  2: { title: '第二梯次分享', range: '20-38' },
+  3: { title: '第三梯次分享', range: '39-57' }
 };
 
+function getGroupLabel(group) {
+  const labels = {
+    1: '第一梯次',
+    2: '第二梯次',
+    3: '第三梯次'
+  };
+
+  return labels[group] || `第 ${group} 梯次`;
+}
 const contestantGroupsEl = document.querySelector('#contestantGroups');
 const countEl = document.querySelector('#contestantCount');
 const searchEl = document.querySelector('#contestantSearch');
@@ -572,12 +581,11 @@ function contestantCard(person) {
         <article class="overflow-hidden rounded-3xl border border-ceremony-deepgold/20 bg-white shadow-ceremony">
           <div class="portrait relative aspect-[4/5] overflow-hidden">
             ${photoMarkup}
-            <div class="absolute left-4 top-4 z-10 rounded-full bg-black/70 px-3 py-1 text-sm font-black text-ceremony-gold ring-1 ring-ceremony-gold/35">No. ${person.number}</div>
-            <div class="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black via-black/62 to-transparent p-4 pt-16">
+<div class="absolute left-3 top-3 z-10 rounded-full bg-black/80 px-3 py-1 text-xs font-medium text-ceremony-gold ring-1 ring-ceremony-gold/35 sm:left-4 sm:top-4 sm:text-sm">參賽 ${person.number} 號</div>            <div class="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black via-black/62 to-transparent p-4 pt-16">
               <p class="font-display text-2xl font-black text-white">${person.name}</p>
-              <p class="mt-1 text-sm font-bold text-ceremony-rose">第 ${person.group} 梯次</p>
-            </div>
-          </div>
+<p class="mt-1 text-sm font-medium text-ceremony-rose">
+  ${getGroupLabel(person.group)}${person.team ? `・${person.team}` : ''}
+</p> </div> </div>
           <div class="p-4">
             <p class="min-h-12 text-sm leading-6 text-plum/62">${person.tagline}</p>
           </div>
