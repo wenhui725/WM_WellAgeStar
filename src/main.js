@@ -689,9 +689,15 @@ const filterButtons = document.querySelectorAll('.filter-button');
 let activeGroup = 'all';
 
 function contestantCard(person) {
-  const photoMarkup = person.photo
-    ? `<img class="absolute inset-0 h-full w-full object-cover" src="${person.photo}" alt="${person.name} 參賽照片">`
-    : '';
+ const photoMarkup = person.photo
+  ? `<img
+      class="absolute inset-0 h-full w-full object-cover"
+      src="${person.photo}"
+      alt="${person.name} 參賽照片"
+      loading="lazy"
+      decoding="async"
+    >`
+  : '';
 
   return `
         <article class="overflow-hidden rounded-3xl border border-ceremony-deepgold/20 bg-white shadow-ceremony">
@@ -758,6 +764,8 @@ function renderFinalists() {
   class="finalist-card__photo"
   src="${person.photo}"
   alt="${person.name} 入圍者照片"
+  loading="lazy"
+  decoding="async"
 >
 
         <div class="finalist-card__badge">
