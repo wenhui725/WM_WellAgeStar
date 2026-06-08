@@ -143,7 +143,7 @@
             </p>
 
             <h2
-              class="mt-5 font-display text-[clamp(2.55rem,10.5vw,4.4rem)] font-semibold leading-[0.98] tracking-[-0.06em] text-black md:text-[clamp(3.4rem,7vw,6.4rem)] lg:mt-6">
+              class="section-title-desktop-sm mt-5 font-display text-[clamp(2.55rem,10.5vw,4.4rem)] font-semibold leading-[0.98] tracking-[-0.06em] text-black md:text-[clamp(3rem,5vw,5rem)] lg:mt-6">
               站上初選舞台，<br>
               <span class="text-ceremony-deepgold">讓每一道光被看見。</span>
             </h2>
@@ -218,7 +218,7 @@
             </p>
 
             <h2
-              class="mt-5 font-display text-[clamp(2.75rem,11vw,4.8rem)] font-semibold leading-[0.98] tracking-[-0.06em] text-white md:text-[clamp(3.8rem,7.5vw,6.8rem)] lg:mt-6">
+              class="mt-5 font-display text-[clamp(2.75rem,11vw,4.8rem)] font-semibold leading-[0.98] tracking-[-0.06em] text-white md:text-[clamp(3rem,5vw,5rem)] lg:mt-6">
               現場票選人氣王，<br>
               <span class="text-ceremony-gold">讓掌聲化為榮耀時刻。</span>
             </h2>
@@ -291,7 +291,7 @@
             </p>
 
             <h2
-              class="mt-5 font-display text-[clamp(2.55rem,10.5vw,4.4rem)] font-semibold leading-[0.98] tracking-[-0.06em] text-black md:text-[clamp(3.4rem,7vw,6.4rem)] lg:mt-6">
+              class="mt-5 font-display text-[clamp(2.55rem,10.5vw,4.4rem)] font-semibold leading-[0.98] tracking-[-0.06em] text-black md:text-[clamp(3rem,5vw,5rem)] lg:mt-6">
               12 位入圍者，<br>
               <span class="text-ceremony-deepgold">從初選舞台走向更耀眼的下一站。</span>
             </h2>
@@ -344,8 +344,17 @@
     </section>
 
     <!-- 05 優惠資訊 -->
-    <section id="offers" class="scroll-mt-[118px] bg-white py-12 md:py-20 lg:scroll-mt-24 lg:py-24">
-      <div class="mx-auto w-full max-w-[1180px] px-7 sm:px-8 lg:px-0">
+    <section id="offers"
+      class="scroll-mt-[118px] relative isolate overflow-hidden bg-ink py-12 md:py-20 lg:scroll-mt-24 lg:py-24">
+      <!-- 背景光暈 -->
+      <div
+        class="pointer-events-none absolute left-[-18%] top-[-12%] h-[460px] w-[460px] rounded-full bg-ceremony-pink/20 blur-[160px]">
+      </div>
+      <div
+        class="pointer-events-none absolute right-[-14%] bottom-[-10%] h-[520px] w-[520px] rounded-full bg-ceremony-gold/12 blur-[150px]">
+      </div>
+
+      <div class="relative z-10 mx-auto w-full max-w-[1180px] px-7 sm:px-8 lg:px-0">
         <!-- Section main heading -->
         <div
           class="mb-10 grid gap-4 border-b border-ceremony-gold/25 pb-10 md:mb-14 md:gap-6 md:pb-12 lg:mb-12 lg:grid-cols-[140px_1fr] lg:gap-8 lg:pb-14">
@@ -355,17 +364,17 @@
           </p>
 
           <div class="max-w-4xl">
-            <p class="text-[13px] font-medium tracking-[0.16em] text-slate-500">
+            <p class="text-[13px] font-medium tracking-[0.16em] text-white/50">
               05 / 優惠資訊
             </p>
 
             <h2
-              class="mt-5 font-display text-[clamp(2.55rem,10.5vw,4.4rem)] font-semibold leading-[0.98] tracking-[-0.06em] text-black md:text-[clamp(3.4rem,7vw,6.4rem)] lg:mt-6">
+              class="mt-5 font-display text-[clamp(2.55rem,10.5vw,4.4rem)] font-semibold leading-[0.98] tracking-[-0.06em] text-white md:text-[clamp(3rem,5vw,5rem)] lg:mt-6">
               活動限定優惠，<br>
-              <span class="text-ceremony-deepgold">延續激密之星的舞台熱度。</span>
+              <span class="text-ceremony-gold">延續激密之星的舞台熱度。</span>
             </h2>
 
-            <p class="mt-8 max-w-3xl text-base font-medium leading-loose text-slate-500 md:text-lg">
+            <p class="mt-8 max-w-3xl text-base font-medium leading-loose text-white/60 md:text-lg">
               本區整理第18屆激密之星初選相關優惠資訊，包含票券優惠與新經理獎勵。
               以活動 EDM 呈現重點內容，方便會員快速理解活動期間、索票方式與獎勵條件。
             </p>
@@ -375,10 +384,11 @@
         <!-- Offer editorial list -->
         <div class="grid gap-8">
           <!-- 票券優惠 -->
-          <article class="light-card overflow-hidden rounded-[2rem]">
+          <article
+            class="overflow-hidden rounded-[2rem] border border-ceremony-gold/25 bg-white/[0.06] shadow-glow backdrop-blur">
             <div class="grid gap-0 lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch">
               <!-- EDM preview -->
-              <figure class="bg-ink p-4 lg:p-5">
+              <figure class="bg-black/70 p-4 lg:p-5">
                 <div
                   class="flex h-[360px] items-start justify-center overflow-hidden rounded-[1.35rem] bg-black md:h-[440px] lg:h-[480px]">
                   <img src="/imags/票券優惠EDM.webp" alt="第18屆激密之星票券優惠 EDM"
@@ -388,34 +398,34 @@
 
               <!-- Text content -->
               <div class="flex flex-col justify-center p-6 md:p-8 lg:p-10">
-                <p class="text-sm font-black uppercase tracking-[.28em] text-ceremony-pink">
+                <p class="text-sm font-black uppercase tracking-[.28em] text-ceremony-rose">
                   Ticket Offer
                 </p>
 
-                <h3 class="mt-4 font-display text-4xl font-black leading-tight text-plum md:text-5xl">
+                <h3 class="mt-4 font-display text-4xl font-black leading-tight text-white md:text-5xl">
                   激密之星<br>
                   票券優惠
                 </h3>
 
-                <p class="mt-5 max-w-xl leading-8 text-plum/70">
+                <p class="mt-5 max-w-xl leading-8 text-white/62">
                   活動期間可向各區主管報名索票，憑票參與第18屆激密之星初選相關優惠活動。
                   現場另有指定產品優惠組合，歡迎會員把握期間參與。
                 </p>
 
-                <div class="mt-7 border-l-4 border-ceremony-pink pl-5">
-                  <p class="text-sm font-black tracking-[.22em] text-ceremony-deepgold">
+                <div class="mt-7 border-l-2 border-ceremony-pink pl-5">
+                  <p class="text-sm font-black tracking-[.22em] text-ceremony-gold">
                     OFFER PERIOD
                   </p>
-                  <p class="mt-2 font-display text-3xl font-black text-plum">
+                  <p class="mt-2 font-display text-3xl font-black text-white">
                     12/21 – 12/31
                   </p>
-                  <p class="mt-2 text-sm font-medium leading-7 text-plum/55">
+                  <p class="mt-2 text-sm font-medium leading-7 text-white/50">
                     向各區主管報名，活動現場索票。
                   </p>
                 </div>
 
                 <a href="/imags/票券優惠EDM.webp" target="_blank" rel="noopener"
-                  class="mt-7 inline-flex w-fit min-h-12 items-center justify-center rounded-full bg-ceremony-pink px-6 text-sm font-black tracking-[.12em] text-white transition hover:bg-[#9F0038]">
+                  class="mt-7 inline-flex min-h-12 w-fit items-center justify-center rounded-lg bg-ceremony-pink px-6 text-sm font-black tracking-[.12em] text-white transition hover:bg-[#9F0038]">
                   查看完整 EDM
                 </a>
               </div>
@@ -423,45 +433,46 @@
           </article>
 
           <!-- 新經理獎勵 -->
-          <article class="light-card overflow-hidden rounded-[2rem]">
+          <article
+            class="overflow-hidden rounded-[2rem] border border-ceremony-gold/25 bg-white/[0.06] shadow-glow backdrop-blur">
             <div class="grid gap-0 lg:grid-cols-[1.18fr_0.82fr] lg:items-stretch">
               <!-- Text content -->
               <div class="flex flex-col justify-center p-6 md:p-8 lg:p-10">
-                <p class="text-sm font-black uppercase tracking-[.28em] text-ceremony-pink">
+                <p class="text-sm font-black uppercase tracking-[.28em] text-ceremony-rose">
                   New Manager Reward
                 </p>
 
-                <h3 class="mt-4 font-display text-4xl font-black leading-tight text-plum md:text-5xl">
+                <h3 class="mt-4 font-display text-4xl font-black leading-tight text-white md:text-5xl">
                   新經理<br>
                   獎勵方案
                 </h3>
 
-                <p class="mt-5 max-w-xl leading-8 text-plum/70">
+                <p class="mt-5 max-w-xl leading-8 text-white/62">
                   新入會經理專屬獎勵同步登場！
                   <br>
-                  活動期間以100員公益金，即可獲得指定產品獎勵。
+                  活動期間以100元公益金，即可獲得指定產品獎勵。
                 </p>
 
-                <div class="mt-7 border-l-4 border-ceremony-pink pl-5">
-                  <p class="text-sm font-black tracking-[.22em] text-ceremony-deepgold">
+                <div class="mt-7 border-l-2 border-ceremony-pink pl-5">
+                  <p class="text-sm font-black tracking-[.22em] text-ceremony-gold">
                     REWARD PERIOD
                   </p>
-                  <p class="mt-2 font-display text-3xl font-black text-plum">
+                  <p class="mt-2 font-display text-3xl font-black text-white">
                     12/1 – 12/30
                   </p>
-                  <p class="mt-2 text-sm font-medium leading-7 text-plum/55">
+                  <p class="mt-2 text-sm font-medium leading-7 text-white/50">
                     新入會經理專屬活動獎勵。
                   </p>
                 </div>
 
                 <a href="/imags/新經理獎勵EDM.webp" target="_blank" rel="noopener"
-                  class="mt-7 inline-flex w-fit min-h-12 items-center justify-center rounded-full bg-ceremony-pink px-6 text-sm font-black tracking-[.12em] text-white transition hover:bg-[#9F0038]">
+                  class="mt-7 inline-flex min-h-12 w-fit items-center justify-center rounded-lg bg-ceremony-pink px-6 text-sm font-black tracking-[.12em] text-white transition hover:bg-[#9F0038]">
                   查看完整 EDM
                 </a>
               </div>
 
               <!-- EDM preview -->
-              <figure class="bg-ink p-4 lg:p-5">
+              <figure class="bg-black/70 p-4 lg:p-5">
                 <div
                   class="flex h-[360px] items-start justify-center overflow-hidden rounded-[1.35rem] bg-black md:h-[440px] lg:h-[480px]">
                   <img src="/imags/新經理獎勵EDM.webp" alt="第18屆激密之星新經理獎勵 EDM"
@@ -473,17 +484,93 @@
         </div>
       </div>
     </section>
-    <!-- 活動流程 -->
 
-    <section id="schedule" class="bg-veil py-16 md:py-24">
-      <div class="wrap grid gap-8 lg:grid-cols-[.68fr_1.32fr]">
-        <div>
-          <p class="text-sm font-black uppercase tracking-[.28em] text-ceremony-pink">Run of Show</p>
-          <h2 class="mt-4 font-display text-4xl font-black text-plum md:text-5xl">活動流程簡表</h2>
-          <p class="mt-4 leading-8 text-plum/62">流程保留為輔助資訊，視覺層級低於參賽者與入圍者區塊。</p>
+    <!-- 06 活動流程 -->
+    <section id="schedule" class="scroll-mt-[118px] bg-white/65 py-12 md:py-20 lg:scroll-mt-24 lg:py-24">
+      <div class="mx-auto w-full max-w-[1180px] px-7 sm:px-8 lg:px-0">
+        <!-- Section main heading -->
+        <div
+          class="mb-10 grid gap-4 border-b border-ceremony-gold/25 pb-10 md:mb-14 md:gap-6 md:pb-12 lg:mb-12 lg:grid-cols-[140px_1fr] lg:gap-8 lg:pb-14">
+          <p
+            class="font-display text-[clamp(4.5rem,18vw,7rem)] font-semibold leading-none text-ceremony-rose/70 lg:-ml-20 lg:text-[clamp(5rem,10vw,8.5rem)]">
+            06
+          </p>
+
+          <div class="max-w-4xl">
+            <p class="text-[13px] font-medium tracking-[0.16em] text-slate-500">
+              06 / 活動流程
+            </p>
+
+            <h2
+              class="mt-5 font-display text-[clamp(2.55rem,10.5vw,4.4rem)] font-semibold leading-[0.98] tracking-[-0.06em] text-black md:text-[clamp(3rem,5vw,5rem)]] lg:mt-6">
+              從開放進場到入圍公布，<br>
+              <span class="text-ceremony-deepgold">完整記錄初選舞台的精彩節奏。</span>
+            </h2>
+
+            <p class="mt-8 max-w-3xl text-base font-medium leading-loose text-slate-500 md:text-lg">
+              活動自開放進場展開，歷經影片播放、致詞、三梯次分享、摸彩與頒獎，
+              最後進入人氣王揭曉與入圍名單公布，為本屆初選留下完整紀錄。
+            </p>
+          </div>
         </div>
-        <div class="light-card rounded-3xl p-3 sm:p-5">
-          <ol id="scheduleList" class="grid gap-2"></ol>
+
+        <div class="grid gap-12 lg:grid-cols-[0.58fr_1.42fr] lg:items-start">
+          <!-- 左側編輯導讀 -->
+          <!-- 左側編輯導讀 -->
+          <aside class="schedule-note-refined lg:sticky lg:top-[118px] lg:self-start">
+            <p class="schedule-note-refined__eyebrow">Editorial Note</p>
+
+            <h3 class="schedule-note-refined__title">
+              初選舞台<br>
+              節奏筆記
+            </h3>
+
+            <p class="schedule-note-refined__copy">
+  從暖場進場到參賽者登台分享，現場氣氛隨著每個流程逐步升溫。
+活動後段則迎來人氣王揭曉、入圍者公布與結語，串起初選舞台的重要時刻。
+            </p>
+
+            <div class="schedule-note-refined__rule"></div>
+
+            <div class="schedule-note-refined__moments">
+              <p class="schedule-note-refined__subhead">Key Moments</p>
+
+              <ul class="schedule-mini-line">
+                <li>
+                  <span>13:30</span>
+                  <strong>參賽者登場</strong>
+                </li>
+                <li>
+                  <span>15:25</span>
+                  <strong>人氣王揭曉</strong>
+                </li>
+                <li>
+                  <span>15:40</span>
+                  <strong>公布入圍者</strong>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- 右側極簡時間線 -->
+          <div class="schedule-sheet-refined">
+            <div class="schedule-sheet-refined__head">
+              <div>
+                <p class="text-sm font-black uppercase tracking-[.28em] text-ceremony-pink">
+                  Run of Show
+                </p>
+                <h3 class="mt-2 font-display text-3xl font-semibold text-plum md:text-4xl">
+                  活動流程簡表
+                </h3>
+              </div>
+
+              <p class="text-sm font-bold text-plum/40">
+                12:30 開放進場｜16:00 活動結語
+              </p>
+            </div>
+
+            <ol id="scheduleList" class="schedule-list-refined"></ol>
+          </div>
         </div>
       </div>
     </section>

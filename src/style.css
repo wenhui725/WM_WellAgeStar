@@ -248,7 +248,254 @@
   font-size: 0.95rem;
   font-weight: 700;
 }
+/* =========================
+   Schedule / Refined Editorial
+========================= */
 
+/* 左側導讀欄：降低卡片感，做成雜誌側欄 */
+.schedule-note-refined {
+  padding: 6px 4px 6px 0;
+}
+
+.schedule-note-refined__eyebrow {
+  color: #CE0045;
+  font-size: .82rem;
+  font-weight: 900;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+
+.schedule-note-refined__title {
+  margin-top: 18px;
+  color: #241421;
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 3.5vw, 3.55rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.schedule-note-refined__copy {
+  margin-top: 26px;
+  max-width: 25rem;
+  color: rgba(36, 20, 33, .58);
+  font-size: .98rem;
+  font-weight: 500;
+  line-height: 2.05;
+}
+
+.schedule-note-refined__rule {
+  margin-top: 30px;
+  width: min(260px, 100%);
+  height: 1px;
+  background: rgba(139, 107, 27, .14);
+}
+
+.schedule-note-refined__moments {
+  margin-top: 22px;
+}
+
+.schedule-note-refined__subhead {
+  color: #8B6B1B;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+.schedule-mini-line {
+  position: relative;
+  margin-top: 18px;
+  display: grid;
+  gap: 16px;
+}
+
+.schedule-mini-line::before {
+  content: "";
+  position: absolute;
+  left: 42px;
+  top: 7px;
+  bottom: 7px;
+  width: 1px;
+  background: rgba(139, 107, 27, .14);
+}
+
+.schedule-mini-line li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 68px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.schedule-mini-line li::before {
+  content: "";
+  position: absolute;
+  left: 39px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #CE0045;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 6px rgba(206, 0, 69, .07);
+}
+
+.schedule-mini-line span {
+  color: #8B6B1B;
+  font-size: .96rem;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+
+.schedule-mini-line strong {
+  color: rgba(36, 20, 33, .78);
+  font-size: .96rem;
+  font-weight: 700;
+}
+
+/* 右側流程表：更秀氣，降低框線與字重 */
+.schedule-sheet-refined {
+  border-top: 1px solid rgba(139, 107, 27, .16);
+  background: transparent;
+}
+
+.schedule-sheet-refined__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 0 0 22px;
+  border-bottom: 1px solid rgba(139, 107, 27, .10);
+}
+
+.schedule-list-refined {
+  display: grid;
+}
+
+.schedule-row-refined {
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  gap: 28px;
+  align-items: start;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(139, 107, 27, .08);
+}
+
+.schedule-row-refined:last-child {
+  border-bottom: none;
+}
+
+.schedule-row-refined__time {
+  color: #9A741E;
+  font-size: .98rem;
+  font-weight: 800;
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .01em;
+}
+
+.schedule-row-refined__body {
+  position: relative;
+  padding-left: 30px;
+}
+
+.schedule-row-refined__body::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .72rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(139, 107, 27, .30);
+}
+
+.schedule-row-refined:not(:last-child) .schedule-row-refined__body::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: .72rem;
+  width: 1px;
+  height: calc(100% + 28px);
+  background: rgba(139, 107, 27, .13);
+}
+
+.schedule-row-refined__title {
+  color: #241421;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+/* 重點節點：只強調點，不加大片背景 */
+.schedule-row-refined.is-key .schedule-row-refined__body::before {
+  background: #CE0045;
+  box-shadow: 0 0 0 6px rgba(206, 0, 69, .07);
+}
+
+.schedule-row-refined.is-key .schedule-row-refined__title {
+  color: #1F1020;
+  font-weight: 800;
+}
+
+@media (max-width: 1024px) {
+  .schedule-note-refined {
+    padding-right: 0;
+  }
+
+  .schedule-note-refined__title {
+    font-size: clamp(2.3rem, 7vw, 3.4rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .schedule-row-refined {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 18px 0;
+  }
+
+  .schedule-row-refined__time {
+    font-size: .92rem;
+  }
+
+  .schedule-row-refined__body {
+    padding-left: 22px;
+  }
+
+  .schedule-row-refined__body::before {
+    top: .62rem;
+    width: 7px;
+    height: 7px;
+  }
+
+  .schedule-row-refined:not(:last-child) .schedule-row-refined__body::after {
+    left: 3px;
+    top: .62rem;
+    height: calc(100% + 22px);
+  }
+
+  .schedule-row-refined__title {
+    font-size: clamp(1.25rem, 5vw, 1.65rem);
+  }
+
+  .schedule-mini-line li {
+    grid-template-columns: 62px 1fr;
+    gap: 14px;
+  }
+
+  .schedule-mini-line::before {
+    left: 38px;
+  }
+
+  .schedule-mini-line li::before {
+    left: 35px;
+  }
+}
 /* 只保留一個桌機斷點：手機和平板 2 欄，桌機 4 欄 */
 @media (min-width: 1024px) {
   .finalist-editorial-grid {

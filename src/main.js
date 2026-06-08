@@ -579,19 +579,74 @@ const finalists = finalistNumbers
   .filter(Boolean);
 
 const schedule = [
-  ['12:30-13:15', '開放進場'],
-  ['13:15-13:20', '宣傳影片播放'],
-  ['13:20-13:25', '主持人致詞'],
-  ['13:25-13:27', '營運長致詞'],
-  ['13:27-13:30', '17 聲援影片'],
-  ['13:30-13:40', '第18屆參賽者登場'],
-  ['13:40-14:05', '第一梯次分享'],
-  ['14:10-14:35', '第二梯次分享'],
-  ['14:40-15:05', '第三梯次分享'],
-  ['15:10-15:25', '頒發參賽獎'],
-  ['15:25-15:35', '人氣王揭曉'],
-  ['15:40-15:50', '公布入圍者'],
-  ['15:50-16:00', '活動結語']
+  {
+    time: '12:30 – 13:15',
+    title: '開放進場'
+  },
+  {
+    time: '13:15 – 13:20',
+    title: '宣傳影片播放'
+  },
+  {
+    time: '13:20 – 13:25',
+    title: '主持人致詞'
+  },
+  {
+    time: '13:25 – 13:27',
+    title: '營運長致詞'
+  },
+  {
+    time: '13:27 – 13:30',
+    title: '17 聲援影片'
+  },
+  {
+    time: '13:30 – 13:40',
+    title: '第18屆參賽者登場'
+  },
+  {
+    time: '13:40 – 14:05',
+    title: '第一梯次分享'
+  },
+  {
+    time: '14:05 – 14:10',
+    title: '第一階段摸彩'
+  },
+  {
+    time: '14:10 – 14:35',
+    title: '第二梯次分享'
+  },
+  {
+    time: '14:35 – 14:40',
+    title: '第二階段摸彩'
+  },
+  {
+    time: '14:40 – 15:05',
+    title: '第三梯次分享'
+  },
+  {
+    time: '15:05 – 15:10',
+    title: '第三階段摸彩'
+  },
+  {
+    time: '15:10 – 15:25',
+    title: '頒發參賽獎'
+  },
+  {
+    time: '15:25 – 15:35',
+    title: '人氣王揭曉與摸彩'
+  },
+  {
+    time: '15:35 – 15:40',
+    title: '第四階段摸彩'
+  },
+  {
+    time: '15:40 – 15:50',
+    title: '公布入圍者'
+  },
+  {
+    time: '15:50 – 16:00',
+    title: '活動結語'
+  }
 ];
 
 const groupMeta = {
@@ -704,12 +759,35 @@ function renderFinalists() {
 
 function renderSchedule() {
   const scheduleList = document.querySelector('#scheduleList');
-  scheduleList.innerHTML = schedule.map(([time, title]) => `
-        <li class="grid grid-cols-[112px_1fr] gap-4 rounded-2xl border border-ceremony-deepgold/14 bg-white/78 p-4 text-sm sm:grid-cols-[140px_1fr]">
-          <time class="font-black tabular-nums text-ceremony-deepgold">${time}</time>
-          <span class="font-bold text-plum/75">${title}</span>
-        </li>
-      `).join('');
+
+  scheduleList.innerHTML = schedule.map((item) => {
+    const isKey =
+      item.title === '第18屆參賽者登場' ||
+      item.title === '人氣王揭曉與摸彩' ||
+      item.title === '公布入圍者';
+
+    return `
+      <li class="schedule-row-refined ${isKey ? 'is-key' : ''}">
+        <time class="schedule-row-refined__time">${item.time}</time>
+
+        <div class="schedule-row-refined__body">
+          <h4 class="schedule-row-refined__title">${item.title}</h4>
+        </div>
+      </li>
+    `;
+  }).join('');
+}
+
+function getScheduleTag(type) {
+  const tags = {
+    normal: '流程',
+    highlight: '重點',
+    group: '分享',
+    gift: '摸彩',
+    award: '頒獎'
+  };
+
+  return tags[type] || '流程';
 }
 
 filterButtons.forEach((button) => {
