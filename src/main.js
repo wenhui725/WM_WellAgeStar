@@ -1,11 +1,16 @@
 import './style.css';
 
+// ==============================
+// Header navigation / Anchor scroll
+// ==============================
+
 const navLinks = Array.from(document.querySelectorAll('[data-nav-link]'));
+const internalLinks = Array.from(document.querySelectorAll('a[href^="#"]'));
 
 const sectionIds = navLinks
   .map((link) => link.getAttribute('href'))
   .filter((href) => href && href.startsWith('#'))
-  .map((href) => href.replace('#', ''));
+  .map((href) => href.slice(1));
 
 const sections = sectionIds
   .map((id) => document.getElementById(id))
@@ -28,15 +33,32 @@ function setActiveNav(id, shouldCenterNav = false) {
     link.classList.toggle('text-black/65', !isActive);
     link.classList.toggle('bg-transparent', !isActive);
 
-    // 只有點擊 Nav 時，才讓手機橫向 Nav 自動置中
-    // 不要在每次 scroll 時做，否則 Nav 會一直被捲動，造成秀逗感
+    // 手機版：只有「點擊」時才把橫向 Nav 滑到目前項目
+    // 捲動畫面時不要一直置中，避免 Nav 抖動
     if (isActive && shouldCenterNav && window.innerWidth < 1024) {
-      link.scrollIntoView({
-        behavior: 'smooth',
-        inline: 'center',
-        block: 'nearest',
+      requestAnimationFrame(() => {
+        link.scrollIntoView({
+          behavior: 'smooth',
+          inline: 'center',
+          block: 'nearest',
+        });
       });
     }
+  });
+}
+
+function scrollToSection(id, shouldCenterNav = true) {
+  const target = document.getElementById(id);
+  if (!target) return;
+
+  const headerHeight = getHeaderHeight();
+  const targetTop = Math.max(target.offsetTop - headerHeight, 0);
+
+  setActiveNav(id, shouldCenterNav);
+
+  window.scrollTo({
+    top: targetTop,
+    behavior: 'smooth',
   });
 }
 
@@ -57,24 +79,20 @@ function updateActiveNavByScroll() {
   }
 }
 
-navLinks.forEach((link) => {
+// 讓 Nav、Logo、Hero CTA、Footer 回到頁首都走同一套錨點邏輯
+internalLinks.forEach((link) => {
   link.addEventListener('click', (event) => {
-    event.preventDefault();
+    const href = link.getAttribute('href');
 
-    const id = link.getAttribute('href')?.replace('#', '');
-    const target = id ? document.getElementById(id) : null;
+    if (!href || href === '#') return;
+
+    const id = href.slice(1);
+    const target = document.getElementById(id);
 
     if (!target) return;
 
-    const headerHeight = getHeaderHeight();
-    const targetTop = target.offsetTop - headerHeight;
-
-    setActiveNav(id, true);
-
-    window.scrollTo({
-      top: targetTop,
-      behavior: 'smooth',
-    });
+    event.preventDefault();
+    scrollToSection(id, true);
   });
 });
 
@@ -689,15 +707,15 @@ const filterButtons = document.querySelectorAll('.filter-button');
 let activeGroup = 'all';
 
 function contestantCard(person) {
- const photoMarkup = person.photo
-  ? `<img
+  const photoMarkup = person.photo
+    ? `<img
       class="absolute inset-0 h-full w-full object-cover"
       src="${person.photo}"
       alt="${person.name} 參賽照片"
       loading="lazy"
       decoding="async"
     >`
-  : '';
+    : '';
 
   return `
         <article class="overflow-hidden rounded-3xl border border-ceremony-deepgold/20 bg-white shadow-ceremony">
@@ -758,29 +776,32 @@ function renderFinalists() {
   }
 
   finalistGrid.innerHTML = finalists.map((person) => `
-    <article class="finalist-card shine">
-      <div class="finalist-card__photo-wrap">
-<img
-  class="finalist-card__photo"
-  src="${person.photo}"
-  alt="${person.name} 入圍者照片"
-  loading="lazy"
-  decoding="async"
->
+  <article
+    class="finalist-card shine"
+    style="--x:${person.focusX}; --y:${person.focusY}; --z:${person.zoom};"
+  >
+    <div class="finalist-card__photo-wrap">
+      <img
+        class="finalist-card__photo"
+        src="${person.photo}"
+        alt="${person.name} 入圍者照片"
+        loading="lazy"
+        decoding="async"
+      >
 
-        <div class="finalist-card__badge">
-          ${person.number} 號
-        </div>
-
-        <div class="finalist-card__overlay">
-          <p class="font-display text-2xl font-black text-white">${person.name}</p>
-          <p class="mt-1 text-sm font-medium text-ceremony-rose">
-            ${person.team ? `${person.team}・` : ''}${getGroupLabel(person.group)}
-          </p>
-        </div>
+      <div class="finalist-card__badge">
+        ${person.number} 號
       </div>
-    </article>
-  `).join('');
+
+      <div class="finalist-card__overlay">
+        <p class="font-display text-2xl font-black text-white">${person.name}</p>
+        <p class="mt-1 text-sm font-medium text-ceremony-rose">
+          ${person.team ? `${person.team}・` : ''}${getGroupLabel(person.group)}
+        </p>
+      </div>
+    </div>
+  </article>
+`).join('');
 }
 
 function renderSchedule() {
@@ -802,18 +823,6 @@ function renderSchedule() {
       </li>
     `;
   }).join('');
-}
-
-function getScheduleTag(type) {
-  const tags = {
-    normal: '流程',
-    highlight: '重點',
-    group: '分享',
-    gift: '摸彩',
-    award: '頒獎'
-  };
-
-  return tags[type] || '流程';
 }
 
 filterButtons.forEach((button) => {

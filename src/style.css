@@ -203,20 +203,6 @@
 }
 
 /* 每張照片微調：之後只改這裡 */
-.finalist-card:nth-child(1)  { --x: 8%;  --y: 0%;   --z: 1.12; } /* 11號 */
-.finalist-card:nth-child(2)  { --x: 0%;  --y: 0%;   --z: 1.04; } /* 12號 */
-.finalist-card:nth-child(3)  { --x: 10%; --y: 0%;   --z: 1.12; } /* 13號 */
-.finalist-card:nth-child(4)  { --x: 0%;  --y: 2%;   --z: 1.04; } /* 19號 */
-
-.finalist-card:nth-child(5)  { --x: 0%;  --y: 4%;   --z: 1.04; } /* 25號 */
-.finalist-card:nth-child(6)  { --x: 10%; --y: -5%;  --z: 1.16; } /* 32號 */
-.finalist-card:nth-child(7)  { --x: 0%;  --y: 10%;  --z: 1.16; } /* 39號 */
-.finalist-card:nth-child(8)  { --x: 0%;  --y: 15%;  --z: 1.20; } /* 40號 */
-
-.finalist-card:nth-child(9)  { --x: 0%;  --y: 2%;   --z: 1.02; } /* 41號 */
-.finalist-card:nth-child(10) { --x: 0%;  --y: 0%;   --z: 1.04; } /* 42號 */
-.finalist-card:nth-child(11) { --x: 0%;  --y: 0%;   --z: 1.04; } /* 53號 */
-.finalist-card:nth-child(12) { --x: 0%;  --y: -9%;  --z: 1.12; } /* 57號 */
 
 .finalist-card__overlay {
   position: absolute;
@@ -489,40 +475,7 @@
   .gallery-editorial-card {
     min-height: 320px;
   }
-}
 
-@media (min-width: 1024px) {
-  .gallery-editorial-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-auto-rows: 210px;
-    gap: 18px;
-  }
-
-  .gallery-editorial-card {
-    min-height: auto;
-  }
-
-  .gallery-editorial-card--large {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-
-  .gallery-editorial-card--wide {
-    grid-column: span 2;
-  }
-}
-
-@media (max-width: 1024px) {
-  .schedule-note-refined {
-    padding-right: 0;
-  }
-
-  .schedule-note-refined__title {
-    font-size: clamp(2.3rem, 7vw, 3.4rem);
-  }
-}
-
-@media (max-width: 768px) {
   .schedule-row-refined {
     grid-template-columns: 1fr;
     gap: 8px;
@@ -565,9 +518,36 @@
   .schedule-mini-line li::before {
     left: 35px;
   }
+
 }
-/* 只保留一個桌機斷點：手機和平板 2 欄，桌機 4 欄 */
+
 @media (min-width: 1024px) {
+  .gallery-editorial-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 210px;
+    gap: 18px;
+  }
+
+  .gallery-editorial-card {
+    min-height: auto;
+  }
+
+  .gallery-editorial-card--large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .gallery-editorial-card--wide {
+    grid-column: span 2;
+  }
+
+  .schedule-note-refined {
+    padding-right: 0;
+  }
+
+  .schedule-note-refined__title {
+    font-size: clamp(2.3rem, 7vw, 3.4rem);
+  }
   .finalist-editorial-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px;
