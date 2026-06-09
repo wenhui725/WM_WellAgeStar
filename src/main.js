@@ -16,6 +16,8 @@ const sections = sectionIds
   .map((id) => document.getElementById(id))
   .filter(Boolean);
 
+let currentActiveSectionId = null;
+
 function getHeaderHeight() {
   const header = document.querySelector('#siteHeader');
   return header ? header.offsetHeight : 0;
@@ -66,17 +68,24 @@ function updateActiveNavByScroll() {
   const headerHeight = getHeaderHeight();
   const currentY = window.scrollY + headerHeight + 2;
 
-  let currentSectionId = sections[0]?.id;
+  let nextSectionId = sections[0]?.id;
 
   sections.forEach((section) => {
     if (currentY >= section.offsetTop) {
-      currentSectionId = section.id;
+      nextSectionId = section.id;
     }
   });
 
-  if (currentSectionId) {
-    setActiveNav(currentSectionId, false);
-  }
+  if (!nextSectionId) return;
+
+  const isSectionChanged = nextSectionId !== currentActiveSectionId;
+
+  currentActiveSectionId = nextSectionId;
+
+  // 手動滑頁時：
+  // 只有 active section 改變的瞬間，才讓手機 Nav 自動置中
+  // 不要每次 scroll 都置中，避免橫向 Nav 抖動
+  setActiveNav(nextSectionId, isSectionChanged);
 }
 
 // 讓 Nav、Logo、Hero CTA、Footer 回到頁首都走同一套錨點邏輯
