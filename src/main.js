@@ -109,7 +109,7 @@ const contestants = [
     team: '合育',
     name: '胡岑莘',
     group: 1,
-    photo: '/imags/57位參賽者/1合育-胡岑莘.webp',
+    photo: '/imags/57位參賽者/thumb/1合育-胡岑莘.webp',
     tagline: '從健康改善開始，重新找回生活的圓滿。'
   },
   {
@@ -117,7 +117,7 @@ const contestants = [
     team: '璽崴',
     name: '張子玲',
     group: 1,
-    photo: '/imags/57位參賽者/2璽崴-張子玲.webp',
+    photo: '/imags/57位參賽者/thumb/2璽崴-張子玲.webp',
     tagline: '在台灣第三個十年，創造新目標與價值。'
   },
   {
@@ -125,7 +125,7 @@ const contestants = [
     team: '康宸',
     name: '郭莉娟',
     group: 1,
-    photo: '/imags/57位參賽者/3康宸-郭莉娟.webp',
+    photo: '/imags/57位參賽者/thumb/3康宸-郭莉娟.webp',
     tagline: '帶著信念與準備登場，讓努力被更多人看見。'
   },
   {
@@ -133,7 +133,7 @@ const contestants = [
     team: '仁馨',
     name: '張淑滿',
     group: 1,
-    photo: '/imags/57位參賽者/4仁馨-張淑滿.webp',
+    photo: '/imags/57位參賽者/thumb/4仁馨-張淑滿.webp',
     tagline: '一次體驗，開啟重新照顧自己的契機。'
   },
   {
@@ -141,7 +141,7 @@ const contestants = [
     team: '華宸',
     name: '陳潘碧珠',
     group: 1,
-    photo: '/imags/57位參賽者/5華宸-陳潘碧珠.webp',
+    photo: '/imags/57位參賽者/thumb/5華宸-陳潘碧珠.webp',
     tagline: '給自己一次機會，找回健康與快樂。'
   },
   {
@@ -149,7 +149,7 @@ const contestants = [
     team: '璽崴',
     name: '謝佩蓁',
     group: 1,
-    photo: '/imags/57位參賽者/6璽崴-謝佩蓁.webp',
+    photo: '/imags/57位參賽者/thumb/6璽崴-謝佩蓁.webp',
     tagline: '看見改變後相信，也把健康分享出去。'
   },
   {
@@ -157,7 +157,7 @@ const contestants = [
     team: '榮心',
     name: '李金澤',
     group: 1,
-    photo: '/imags/57位參賽者/7榮心-李金澤.webp',
+    photo: '/imags/57位參賽者/thumb/7榮心-李金澤.webp',
     tagline: '從不健康到能運動，感謝改變的力量。'
   },
   {
@@ -165,7 +165,7 @@ const contestants = [
     team: '環義',
     name: '林佳澐',
     group: 1,
-    photo: '/imags/57位參賽者/8環義-林佳澐.webp',
+    photo: '/imags/57位參賽者/thumb/8環義-林佳澐.webp',
     tagline: '走上舞台，是相信自己、突破自己的開始。'
   },
   {
@@ -173,7 +173,7 @@ const contestants = [
     team: '璽崴',
     name: '黃碧月',
     group: 1,
-    photo: '/imags/57位參賽者/9璽崴-黃碧月.webp',
+    photo: '/imags/57位參賽者/thumb/9璽崴-黃碧月.webp',
     tagline: '因見證而感動，踏上改變自己的旅程。'
   },
   {
@@ -181,7 +181,7 @@ const contestants = [
     team: '榮耀',
     name: '張美惠',
     group: 1,
-    photo: '/imags/57位參賽者/10榮耀-張美惠.webp',
+    photo: '/imags/57位參賽者/thumb/10榮耀-張美惠.webp',
     tagline: '從疲憊失眠中恢復，重新拿回健康選擇權。'
   },
   {
@@ -189,7 +189,7 @@ const contestants = [
     team: '日耀',
     name: '阮詩翃',
     group: 1,
-    photo: '/imags/57位參賽者/11日耀-阮詩翃.webp',
+    photo: '/imags/57位參賽者/thumb/11日耀-阮詩翃.webp',
     tagline: '找回健康與快樂，也把好產品分享給家人。'
   },
   {
@@ -197,7 +197,7 @@ const contestants = [
     team: '華展',
     name: '吳哲村',
     group: 1,
-    photo: '/imags/57位參賽者/12華展-吳哲村.webp',
+    photo: '/imags/57位參賽者/thumb/12華展-吳哲村.webp',
     tagline: '從半信半疑到有感，精神體力都更好了。'
   },
   {
@@ -205,7 +205,7 @@ const contestants = [
     team: '禾芯',
     name: '葉招治',
     group: 1,
-    photo: '/imags/57位參賽者/13禾芯-葉招治.webp',
+    photo: '/imags/57位參賽者/thumb/13禾芯-葉招治.webp',
     tagline: '身體穩定後，更想分享健康與富足人生。'
   },
   {
@@ -213,7 +213,7 @@ const contestants = [
     team: '華展',
     name: '劉碧禎',
     group: 1,
-    photo: '/imags/57位參賽者/14華展-劉碧禎.webp',
+    photo: '/imags/57位參賽者/thumb/14華展-劉碧禎.webp',
     tagline: '長期不適逐漸改善，重新感受生活力量。'
   },
   {
@@ -221,7 +221,7 @@ const contestants = [
     team: '康宸',
     name: '陳筱鈴',
     group: 1,
-    photo: '/imags/57位參賽者/15康宸-陳筱鈴.webp',
+    photo: '/imags/57位參賽者/thumb/15康宸-陳筱鈴.webp',
     tagline: '調整身體狀態，找回健康與自信的自己。'
   },
   {
@@ -229,7 +229,7 @@ const contestants = [
     team: '聖寶',
     name: '詹詠茹',
     group: 1,
-    photo: '/imags/57位參賽者/16聖寶-詹詠茹.webp',
+    photo: '/imags/57位參賽者/thumb/16聖寶-詹詠茹.webp',
     tagline: '告別急診與氣喘困擾，找回生活品質。'
   },
   {
@@ -237,7 +237,7 @@ const contestants = [
     team: '萬益',
     name: '賈淑婉',
     group: 1,
-    photo: '/imags/57位參賽者/17萬益-賈淑婉.webp',
+    photo: '/imags/57位參賽者/thumb/17萬益-賈淑婉.webp',
     tagline: '美業人生下半場，在威力馬重新發光。'
   },
   {
@@ -245,7 +245,7 @@ const contestants = [
     team: '聖寶',
     name: '李宜蓁',
     group: 1,
-    photo: '/imags/57位參賽者/18聖寶-李宜蓁.webp',
+    photo: '/imags/57位參賽者/thumb/18聖寶-李宜蓁.webp',
     tagline: '從疲累神經痛中恢復，找回年輕與美麗。'
   },
   {
@@ -253,7 +253,7 @@ const contestants = [
     team: '飛驊',
     name: '陳聰碧',
     group: 1,
-    photo: '/imags/57位參賽者/19飛驊-陳聰碧.webp',
+    photo: '/imags/57位參賽者/thumb/19飛驊-陳聰碧.webp',
     tagline: '照顧好自己，才能成為家人最好的後盾。'
   },
 
@@ -262,7 +262,7 @@ const contestants = [
     team: '康宸',
     name: '林千栩',
     group: 2,
-    photo: '/imags/57位參賽者/20康宸-林千栩.webp',
+    photo: '/imags/57位參賽者/thumb/20康宸-林千栩.webp',
     tagline: '找回健康與美麗，也願把福氣分享出去。'
   },
   {
@@ -270,7 +270,7 @@ const contestants = [
     team: '璽崴',
     name: '高昀秀',
     group: 2,
-    photo: '/imags/57位參賽者/21璽崴-高昀秀.webp',
+    photo: '/imags/57位參賽者/thumb/21璽崴-高昀秀.webp',
     tagline: '長年過敏改善後，精神體態都更有光。'
   },
   {
@@ -278,7 +278,7 @@ const contestants = [
     team: '康宸',
     name: '王美秀',
     group: 2,
-    photo: '/imags/57位參賽者/22康宸-王美秀.webp',
+    photo: '/imags/57位參賽者/thumb/22康宸-王美秀.webp',
     tagline: '重新投資自己，找回健康與家人的機會。'
   },
   {
@@ -286,7 +286,7 @@ const contestants = [
     team: '仁馨',
     name: '施燕珠',
     group: 2,
-    photo: '/imags/57位參賽者/23仁馨-施燕珠.webp',
+    photo: '/imags/57位參賽者/thumb/23仁馨-施燕珠.webp',
     tagline: '退休轉折中，看見新的希望與事業窗口。'
   },
   {
@@ -294,7 +294,7 @@ const contestants = [
     team: '華宸',
     name: '潘煥雯',
     group: 2,
-    photo: '/imags/57位參賽者/24華宸-潘煥雯.webp',
+    photo: '/imags/57位參賽者/thumb/24華宸-潘煥雯.webp',
     tagline: '從黑白人生翻轉，走出去都更有風。'
   },
   {
@@ -302,7 +302,7 @@ const contestants = [
     team: '璽崴',
     name: '黃孟蓁',
     group: 2,
-    photo: '/imags/57位參賽者/25璽崴-黃孟蓁.webp',
+    photo: '/imags/57位參賽者/thumb/25璽崴-黃孟蓁.webp',
     tagline: '勇敢走過生命挑戰，活出精彩與充實。'
   },
   {
@@ -310,7 +310,7 @@ const contestants = [
     team: '榮心',
     name: '楊怡婷',
     group: 2,
-    photo: '/imags/57位參賽者/26榮心-楊怡婷.webp',
+    photo: '/imags/57位參賽者/thumb/26榮心-楊怡婷.webp',
     tagline: '身體改善後，更想把健康帶給親朋好友。'
   },
   {
@@ -318,7 +318,7 @@ const contestants = [
     team: '璽崴',
     name: '楊雅玲',
     group: 2,
-    photo: '/imags/57位參賽者/27璽崴-楊雅玲.webp',
+    photo: '/imags/57位參賽者/thumb/27璽崴-楊雅玲.webp',
     tagline: '體力與自信變好，是在威力馬最大的收穫。'
   },
   {
@@ -326,7 +326,7 @@ const contestants = [
     team: '榮耀',
     name: '連英琇',
     group: 2,
-    photo: '/imags/57位參賽者/28榮耀-連英琇.webp',
+    photo: '/imags/57位參賽者/thumb/28榮耀-連英琇.webp',
     tagline: '健康不再成為負擔，能快樂享受生活。'
   },
   {
@@ -334,7 +334,7 @@ const contestants = [
     team: '德億',
     name: '張秀鳳',
     group: 2,
-    photo: '/imags/57位參賽者/29德億-張秀鳳.webp',
+    photo: '/imags/57位參賽者/thumb/29德億-張秀鳳.webp',
     tagline: '膝蓋不再疼痛後，更想分享健康給身邊人。'
   },
   {
@@ -342,7 +342,7 @@ const contestants = [
     team: '日耀',
     name: '陳淑芳',
     group: 2,
-    photo: '/imags/57位參賽者/30日耀-陳淑芳.webp',
+    photo: '/imags/57位參賽者/thumb/30日耀-陳淑芳.webp',
     tagline: '用準備成就自信，讓自己也能發光。'
   },
   {
@@ -350,7 +350,7 @@ const contestants = [
     team: '華展',
     name: '胡蓉',
     group: 2,
-    photo: '/imags/57位參賽者/31華展-胡蓉.webp',
+    photo: '/imags/57位參賽者/thumb/31華展-胡蓉.webp',
     tagline: '代謝變好、體態變輕盈，也更有自信。'
   },
   {
@@ -358,7 +358,7 @@ const contestants = [
     team: '玫景',
     name: '應海珠',
     group: 2,
-    photo: '/imags/57位參賽者/32玫景-應海珠.webp',
+    photo: '/imags/57位參賽者/thumb/32玫景-應海珠.webp',
     tagline: '從虛弱低谷中，找回健康與生命光芒。'
   },
   {
@@ -366,7 +366,7 @@ const contestants = [
     team: '冠穎',
     name: '趙彩英',
     group: 2,
-    photo: '/imags/57位參賽者/33冠穎-趙彩英.webp',
+    photo: '/imags/57位參賽者/thumb/33冠穎-趙彩英.webp',
     tagline: '帶著準備好的心，勇敢站上初選舞台。'
   },
   {
@@ -374,7 +374,7 @@ const contestants = [
     team: '萬益',
     name: '周雅文',
     group: 2,
-    photo: '/imags/57位參賽者/34萬益-周雅文.webp',
+    photo: '/imags/57位參賽者/thumb/34萬益-周雅文.webp',
     tagline: '從照顧他人到照顧自己，迎接人生下半場。'
   },
   {
@@ -382,7 +382,7 @@ const contestants = [
     team: '玫景',
     name: '張智慧',
     group: 2,
-    photo: '/imags/57位參賽者/35玫景-張智慧.webp',
+    photo: '/imags/57位參賽者/thumb/35玫景-張智慧.webp',
     tagline: '雙腳變輕盈後，重新找回健康與自信。'
   },
   {
@@ -390,7 +390,7 @@ const contestants = [
     team: '萬益',
     name: '李中珩',
     group: 2,
-    photo: '/imags/57位參賽者/36萬益-李中珩.webp',
+    photo: '/imags/57位參賽者/thumb/36萬益-李中珩.webp',
     tagline: '用自己的故事，感謝產品帶來的支持。'
   },
   {
@@ -398,7 +398,7 @@ const contestants = [
     team: '合育',
     name: '蕭淑華',
     group: 2,
-    photo: '/imags/57位參賽者/37合育-蕭淑華.webp',
+    photo: '/imags/57位參賽者/thumb/37合育-蕭淑華.webp',
     tagline: '從喘與不便中改善，重新走得更穩更輕鬆。'
   },
   {
@@ -406,7 +406,7 @@ const contestants = [
     team: '飛驊',
     name: '陳惠美',
     group: 2,
-    photo: '/imags/57位參賽者/38飛驊-陳惠美.webp',
+    photo: '/imags/57位參賽者/thumb/38飛驊-陳惠美.webp',
     tagline: '身體酸痛逐漸改善，精神體力也越來越好。'
   },
 
@@ -415,7 +415,7 @@ const contestants = [
     team: '康宸',
     name: '邱聖淵',
     group: 3,
-    photo: '/imags/57位參賽者/39康宸-邱聖淵.webp',
+    photo: '/imags/57位參賽者/thumb/39康宸-邱聖淵.webp',
     tagline: '健康穩定後，生活品質更有活力與年輕感。'
   },
   {
@@ -423,7 +423,7 @@ const contestants = [
     team: '仁馨',
     name: '林愛呈',
     group: 3,
-    photo: '/imags/57位參賽者/40仁馨-林愛呈.webp',
+    photo: '/imags/57位參賽者/thumb/40仁馨-林愛呈.webp',
     tagline: '從壓力與不適中，找回彩色人生與自信。'
   },
   {
@@ -431,7 +431,7 @@ const contestants = [
     team: '璽崴',
     name: '蘇榮華',
     group: 3,
-    photo: '/imags/57位參賽者/41璽崴-蘇榮華.webp',
+    photo: '/imags/57位參賽者/thumb/41璽崴-蘇榮華.webp',
     tagline: '從大肚男到年輕有活力，迎接退休新生活。'
   },
   {
@@ -439,7 +439,7 @@ const contestants = [
     team: '康宸',
     name: '陳諭葳',
     group: 3,
-    photo: '/imags/57位參賽者/42康宸-陳諭葳.webp',
+    photo: '/imags/57位參賽者/thumb/42康宸-陳諭葳.webp',
     tagline: '簡單一包，找回健康、漂亮與人生色彩。'
   },
   {
@@ -447,7 +447,7 @@ const contestants = [
     team: '環義',
     name: '李瑞香',
     group: 3,
-    photo: '/imags/57位參賽者/43環義-李瑞香.webp',
+    photo: '/imags/57位參賽者/thumb/43環義-李瑞香.webp',
     tagline: '精神變好、變漂亮，也想分享給親朋好友。'
   },
   {
@@ -455,7 +455,7 @@ const contestants = [
     team: '華宸',
     name: '朱貴蘭',
     group: 3,
-    photo: '/imags/57位參賽者/44華宸-朱貴蘭.webp',
+    photo: '/imags/57位參賽者/thumb/44華宸-朱貴蘭.webp',
     tagline: '被真實見證打動，決定給自己一次機會。'
   },
   {
@@ -463,7 +463,7 @@ const contestants = [
     team: '璽崴',
     name: '吳昭明',
     group: 3,
-    photo: '/imags/57位參賽者/45璽崴-吳昭明.webp',
+    photo: '/imags/57位參賽者/thumb/45璽崴-吳昭明.webp',
     tagline: '看見家人的改變，也讓自己重新嘗試。'
   },
   {
@@ -471,7 +471,7 @@ const contestants = [
     team: '榮心',
     name: '鍾黃德娣',
     group: 3,
-    photo: '/imags/57位參賽者/46榮心-鍾黃德娣.webp',
+    photo: '/imags/57位參賽者/thumb/46榮心-鍾黃德娣.webp',
     tagline: '從頭到腳逐漸改善，退休生活更有自信。'
   },
   {
@@ -479,7 +479,7 @@ const contestants = [
     team: '王鎂',
     name: '楊阿照',
     group: 3,
-    photo: '/imags/57位參賽者/47王鎂-楊阿照.webp',
+    photo: '/imags/57位參賽者/thumb/47王鎂-楊阿照.webp',
     tagline: '睡得飽、精神好，皮膚也重新發亮。'
   },
   {
@@ -487,7 +487,7 @@ const contestants = [
     team: '日耀',
     name: '林茂麟',
     group: 3,
-    photo: '/imags/57位參賽者/48日耀-林茂麟.webp',
+    photo: '/imags/57位參賽者/thumb/48日耀-林茂麟.webp',
     tagline: '精神飽滿、身體改善，還看見新驚喜。'
   },
   {
@@ -495,7 +495,7 @@ const contestants = [
     team: '華展',
     name: '盧秀英',
     group: 3,
-    photo: '/imags/57位參賽者/49華展-盧秀英.webp',
+    photo: '/imags/57位參賽者/thumb/49華展-盧秀英.webp',
     tagline: '從長期用藥到能安睡，找回漂亮與自信。'
   },
   {
@@ -503,7 +503,7 @@ const contestants = [
     team: '日耀',
     name: '黃秋月',
     group: 3,
-    photo: '/imags/57位參賽者/50日耀-黃秋月.webp',
+    photo: '/imags/57位參賽者/thumb/50日耀-黃秋月.webp',
     tagline: '生命鬥士的日常，因三加一更有力量。'
   },
   {
@@ -511,7 +511,7 @@ const contestants = [
     team: '華展',
     name: '黃紹瑞',
     group: 3,
-    photo: '/imags/57位參賽者/51華展-黃紹瑞.webp',
+    photo: '/imags/57位參賽者/thumb/51華展-黃紹瑞.webp',
     tagline: '找回手腳力量，也找回生命的活力。'
   },
   {
@@ -519,7 +519,7 @@ const contestants = [
     team: '玫景',
     name: '游秀敏',
     group: 3,
-    photo: '/imags/57位參賽者/52玫景-游秀敏.webp',
+    photo: '/imags/57位參賽者/thumb/52玫景-游秀敏.webp',
     tagline: '腰痛與睡眠改善後，愛漂亮的自己回來了。'
   },
   {
@@ -527,7 +527,7 @@ const contestants = [
     team: '盛麗',
     name: '楊玉華',
     group: 3,
-    photo: '/imags/57位參賽者/53盛麗-楊玉華.webp',
+    photo: '/imags/57位參賽者/thumb/53盛麗-楊玉華.webp',
     tagline: '從過勞警訊中恢復，延續健康與愛的循環。'
   },
   {
@@ -535,7 +535,7 @@ const contestants = [
     team: '萬益',
     name: '賈薇馨',
     group: 3,
-    photo: '/imags/57位參賽者/54萬益-賈薇馨.webp',
+    photo: '/imags/57位參賽者/thumb/54萬益-賈薇馨.webp',
     tagline: '找回腰身與年輕自我，遠離用藥生活。'
   },
   {
@@ -543,7 +543,7 @@ const contestants = [
     team: '聚芯',
     name: '賴慶宗',
     group: 3,
-    photo: '/imags/57位參賽者/55聚芯-賴慶宗.webp',
+    photo: '/imags/57位參賽者/thumb/55聚芯-賴慶宗.webp',
     tagline: '從多年疼痛中恢復，更想幫助更多人健康。'
   },
   {
@@ -551,7 +551,7 @@ const contestants = [
     team: '萬益',
     name: '徐鏤瑾',
     group: 3,
-    photo: '/imags/57位參賽者/56萬益-徐鏤瑾.webp',
+    photo: '/imags/57位參賽者/thumb/56萬益-徐鏤瑾.webp',
     tagline: '陪伴先生改善生活品質，每天都有新驚喜。'
   },
   {
@@ -559,7 +559,7 @@ const contestants = [
     team: '鳳元',
     name: '王羿淇',
     group: 3,
-    photo: '/imags/57位參賽者/57鳳元-王羿淇.webp',
+    photo: '/imags/57位參賽者/thumb/57鳳元-王羿淇.webp',
     tagline: '抱著嘗試心態開始，卻收穫健康與美麗。'
   }
 ];
