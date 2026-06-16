@@ -558,6 +558,122 @@
       0%, 45% { left: -50%; }
       75%, 100% { left: 130%; }
     }
+
+    /* =========================
+   Motion / Scroll Reveal
+========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(8px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(.16, 1, .3, 1),
+    filter 0.8s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform, filter;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* =========================
+   Motion / Hover Lift
+========================= */
+
+@media (hover: hover) and (pointer: fine) {
+  #contestantGroups article,
+  .finalist-card,
+  .gallery-editorial-card,
+  #offers article {
+    transition:
+      transform 0.35s ease,
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
+  }
+
+  #contestantGroups article:hover,
+  .finalist-card:hover,
+  .gallery-editorial-card:hover,
+  #offers article:hover {
+    transform: translateY(-6px);
+    border-color: rgba(197, 160, 89, .55);
+    box-shadow: 0 30px 80px rgba(35, 18, 28, .18);
+  }
+
+  #contestantGroups article img,
+  .gallery-editorial-card img {
+    transition: transform 0.6s cubic-bezier(.16, 1, .3, 1);
+  }
+
+  #contestantGroups article:hover img,
+  .gallery-editorial-card:hover img {
+    transform: scale(1.06);
+  }
+
+  .finalist-card__photo {
+    transition: transform 0.6s cubic-bezier(.16, 1, .3, 1);
+  }
+
+  .finalist-card:hover .finalist-card__photo {
+    transform: translate(var(--x, 0), var(--y, 0)) scale(calc(var(--z, 1.08) + 0.04));
+  }
+}
+
+/* Hero 主視覺微浮動：很輕，不要太晃 */
+.hero-visual-shine {
+  animation: heroFloat 7s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* 重要流程點呼吸感 */
+.schedule-row-refined.is-key .schedule-row-refined__body::before {
+  animation: keyPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes keyPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 6px rgba(206, 0, 69, .07);
+  }
+
+  50% {
+    box-shadow: 0 0 0 12px rgba(206, 0, 69, .13);
+  }
+}
+
+/* 尊重使用者減少動畫設定 */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  #contestantGroups article,
+  .finalist-card,
+  .gallery-editorial-card,
+  #offers article,
+  #contestantGroups article img,
+  .gallery-editorial-card img,
+  .finalist-card__photo,
+  .hero-visual-shine,
+  .schedule-row-refined.is-key .schedule-row-refined__body::before {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .shine::before { animation: none; }

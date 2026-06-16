@@ -834,15 +834,66 @@ function renderSchedule() {
   }).join('');
 }
 
+function refreshContestants() {
+  renderContestants();
+  setupRevealAnimation();
+}
+
 filterButtons.forEach((button) => {
   button.addEventListener('click', () => {
     activeGroup = button.dataset.group;
     filterButtons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
-    renderContestants();
+    refreshContestants();
   });
 });
 
-searchEl.addEventListener('input', renderContestants);
+searchEl.addEventListener('input', refreshContestants);
 renderContestants();
 renderFinalists();
 renderSchedule();
+// ==============================
+// Scroll reveal animation
+// ==============================
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    });
+  },
+  {
+    threshold: 0.12,
+    rootMargin: '0px 0px -8% 0px',
+  }
+);
+
+function setupRevealAnimation() {
+  const revealTargets = document.querySelectorAll(`
+    main section > div > .mb-10,
+    .light-card,
+    .glass,
+    #popular .grid > div,
+    #offers article,
+    #contestantGroups section,
+    #contestantGroups article,
+    .finalist-card,
+    .schedule-note-refined,
+    .schedule-row-refined,
+    .gallery-editorial-card
+  `);
+
+  revealTargets.forEach((target, index) => {
+    if (target.dataset.revealReady === 'true') return;
+
+    target.dataset.revealReady = 'true';
+    target.classList.add('reveal');
+    target.style.setProperty('--reveal-delay', `${Math.min(index % 8, 6) * 55}ms`);
+
+    revealObserver.observe(target);
+  });
+}
+
+setupRevealAnimation();
